@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Joeff Christian B. Cuyson - Web Developer & Chess Player Portfolio">
+    <title>OOP ACTIVITY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&libraries=geometry,drawing"></script>
+</head>
+<body>
+<body>
+    <!-- Landing Page / Splash Screen -->
+    <div id="landingPage" class="landing-page">
+        <div class="landing-content">
+            <div class="landing-logo">
+                <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1DE9B6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="logoGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1DE9B6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Hexagon layers -->
+                    <polygon points="100,20 170,60 170,140 100,180 30,140 30,60" 
+                             fill="none" stroke="url(#logoGradient)" stroke-width="4" class="hex-1" pathLength="100"/>
+                    <polygon points="100,35 155,65 155,135 100,165 45,135 45,65" 
+                             fill="none" stroke="url(#logoGradient2)" stroke-width="3" class="hex-2" pathLength="100"/>
+                    <polygon points="100,50 140,70 140,130 100,150 60,130 60,70" 
+                             fill="none" stroke="url(#logoGradient)" stroke-width="2" class="hex-3" pathLength="100"/>
+                    <!-- Chess Pawn Symbol -->
+                    <text x="100" y="125" font-family="Arial, sans-serif" font-size="80" fill="url(#logoGradient)" text-anchor="middle" class="logo-text">♟</text>
+                </svg>
+            </div>
+            <h1 class="landing-title">
+                <span class="title-word" style="animation-delay: 0.1s;">WELCOME</span>
+                <span class="title-word" style="animation-delay: 0.3s;">TO</span>
+                <span class="title-word" style="animation-delay: 0.5s;">MY</span>
+                <span class="title-word" style="animation-delay: 0.7s;">WEBSITE</span>
+            </h1>
+            <p class="landing-subtitle">CUYSON, Joeff Christian B.  BSCpE - 1C</p>
+            <button id="enterBtn" class="enter-btn">
+                <span class="btn-text">Enter Site</span>
+                <div class="btn-particles"></div>
+            </button>
+        </div>
+        <div class="particles-container"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    <div class="grid-pattern"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">Joeff Christian B. Cuyson</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Location</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Solo Animated Profile -->
+    <section id="home" class="hero">
+        <div class="profile-container">
+            <div class="profile-image-wrapper">
+                <div class="profile-glow"></div>
+                <img src="halimaw-removebg-preview.png" class="profile-img">
+            </div>
+        </div>
+        <h1 class="hero-title">HEY THERE! I AM JOEFF CHRISTIAN B. CUYSON!</h1>
+        <p class="hero-subtitle">All your skills here</p>
+        <p class="hero-role">Web Developer • Chess Player</p>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Portfolio Section - Smooth Scroll Carousel -->
+    <section id="portfolio" class="portfolio-section">
+        <h2 class="section-title">MY PORTFOLIO</h2>
+        
+        <!-- Instructions -->
+        <p style="text-align: center; color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem;">
+             Scroll horizontally or click dots to navigate 
+        </p>
+        
+        <div class="carousel-container">
+            
+            <!-- Scrollable Carousel Track -->
+            <div class="carousel-track-container" id="carouselContainer">
+                <div class="carousel-track" id="carouselTrack">
+                    
+                    <!-- Card 1: Hobbies & Sports -->
+                    <div class="carousel-card" id="card-0">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=500&fit=crop" alt="Hobbies & Sports">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>🏆 Hobbies & Sports</h3>
+                            <div class="card-details">
+                                <p>• Chess Player - Strategic thinking & competition</p>
+                                <p>• Basketball - Team sports enthusiast</p>
+                                <p>• Gaming - Strategy & puzzle games</p>
+                                <p>• Coding Projects - Building creative solutions</p>
+                            </div>
+                            <button class="card-btn" onclick="openProfileModal('hobbies')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Talents -->
+                    <div class="carousel-card" id="card-1">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop" alt="Talents">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>⭐ Talents</h3>
+                            <div class="card-details">
+                                <p>• Problem Solving - Analytical thinking</p>
+                                <p>• Web Development - Creating interactive experiences</p>
+                                <p>• Strategic Planning - Chess-trained mind</p>
+                                <p>• Quick Learning - Adapting to new technologies</p>
+                            </div>
+                            <button class="card-btn" onclick="openProfileModal('talents')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Educational Background -->
+                    <div class="carousel-card" id="card-2">
+                        <div class="card-image">
+                            <img src="educationngani.png" alt="Education">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>🎓 Educational Background</h3>
+                            <div class="card-details">
+                                <p><strong>BS Computer Engineering</strong></p>
+                                <p>Current Student</p>
+                                <p>• Programming Fundamentals</p>
+                                <p>• Digital Logic Design</p>
+                                <p>• Mathematics & Physics</p>
+                            </div>
+                            <button class="card-btn" onclick="openProfileModal('education')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Expertise & Skills -->
+                    <div class="carousel-card" id="card-3">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=500&fit=crop" alt="Skills">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>💻 Expertise & Skills</h3>
+                            <div class="card-details">
+                                <p><strong>Programming Languages:</strong></p>
+                                <p>HTML, CSS, JavaScript, Python</p>
+                                <p><strong>Tools & Technologies:</strong></p>
+                                <p>Git, VS Code, Google Maps API</p>
+                                <p><strong>Design:</strong> Responsive Web Design</p>
+                            </div>
+                            <button class="card-btn" onclick="openProfileModal('skills')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Awards & Certificates -->
+                    <div class="carousel-card" id="card-4">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&h=500&fit=crop" alt="Awards">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3>🏅 Awards & Certificates</h3>
+                            <div class="card-details">
+                                <p>• Chess Tournament Participant</p>
+                                <p>• Academic Achievements</p>
+                                <p>• Coding Workshops</p>
+                                <p>• Community Projects</p>
+                            </div>
+                            <button class="card-btn" onclick="openProfileModal('awards')">View Details</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Big Clickable Dots Navigation -->
+        <div class="carousel-dots" id="carouselDots"></div>
+        
+    </section>
+
+    <!-- About Section -->
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2 class="section-title">ABOUT</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p style="text-align: justify;">Hi! I'm Joeff, an 18-year-old Computer Engineering (BSCPE) student at Colegio De Montalban (Pamantasan ng Montalban) located in Rodriguez, Rizal. 
+                My journey into tech started three years ago; what began as a love for online gaming quickly turned into a fascination with how software is built.</p>
+                <p style="text-align: justify;">I am an aspiring Software Engineer and Full-Stack Developer. I have already crossed a major milestone by completing Our Grade 12 thesis: 
+                "Development of a Smart School Automation System: Room Temperature Monitoring and Alert System using a GSM Module."
+                For this project, We developed a website integrated with a hardware prototype designed for the students of the Asian Institute of Computer Studies (AICS) - Montalban.</p>
+                <p style="text-align: justify;">I've spent the last two years diving deep into programming fundamentals. While I don't claim to be an expert yet, I am a firm believer in continuous growth. 
+                Every day is an opportunity for me to learn more and get better at my craft.</p>
+            </div>
+            
+            <!-- Stats moved below the text paragraphs -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="2">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Map -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">LOCATION</h2>
+        <div class="map-controls">
+            <button id="addMarkerBtn" class="map-btn">📍 Add Marker</button>
+            <button id="measureDistanceBtn" class="map-btn">📏 Measure Distance</button>
+            <button id="clearMarkersBtn" class="map-btn">🗑️ Clear All Markers</button>
+            <button id="resetMapBtn" class="map-btn">🏠 Back to Home</button>
+        </div>
+        <div class="map-view-controls">
+            <button id="satelliteViewBtn" class="view-btn active">🛰️ Satellite</button>
+            <button id="roadmapViewBtn" class="view-btn">🗺️ Roadmap</button>
+            <button id="terrainViewBtn" class="view-btn">🏔️ Terrain</button>
+        </div>
+        <div class="contact-container">
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>📍 Location</h3>
+                    <p>SouthVille 8B Rodriguez Rizal</p>
+                    <p>Philippines</p>
+                </div>
+                <div class="info-item">
+                    <h3>📧 Email</h3>
+                    <p>joeffchristianbcuyson@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <h3>📱 Phone</h3>
+                    <p>+63 993 151 3841</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CONTACT</h3>
+                <p>joeffchristianbcuyson@gmail.com</p>
+                <p>+63 993 151 3841</p>
+            </div>
+            <div class="footer-section">
+                <h3>AROUND THE WEB</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/joeffchristian.cuyson" target="_blank" class="social-link" aria-label="Facebook">
+                        <span>f</span>
+                    </a>
+                    <a href="https://github.com/Joeffcuyson" target="_blank" class="social-link" aria-label="GitHub">
+                        <span>Git</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/joeff-cuyson-619a503aa/" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <span>in</span>
+                    </a>
+                    <a href="https://www.instagram.com/isynthetic/" target="_blank" class="social-link" aria-label="Instagram">
+                        <span>IG</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>LOCATION</h3>
+                <p>SouthVille 8B Rodriguez Rizal</p>
+                <p>Philippines</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+         <button id="backToTop" class="back-to-top" aria-label="Back to top">↑
+            <!-- Back to Top Button -->
+         <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+         
+    <!-- Cursor Module (DON'T EDIT cursor.js!) -->
+<script src="cursor.js"></script>
+    <!-- Main Script (SAFE TO EDIT) -->
+    <script src="script.js"></script>
+    <!-- Interactive Map Module -->
+    <script src="map.js"></script> 
+</body>
+</html>
